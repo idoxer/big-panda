@@ -1,0 +1,28 @@
+@import "../../styles/main";
+
+.ui-textarea
+{
+    textarea
+    {
+        width: 100%;
+        max-width: 100%;
+        min-width: 100%;
+        min-height: 60px;
+        max-height: 250px;
+        font-family: $fontFamily;
+        font-size: 12px;
+        box-sizing: border-box;
+        border: 1px solid $borderColor;
+        padding: 8px 12px;
+        color: $inputTextColor;
+    }
+
+    &.error
+    {
+        textarea
+        {
+            color: $lightRed;
+            border-color: $lightRed;
+        }
+    }
+}

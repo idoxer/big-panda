@@ -1,0 +1,139 @@
+@import "../../styles/main";
+
+.bp-comments
+{
+    width: $formWidth;
+    box-sizing: border-box;
+    padding: 35px 0;
+    //margin: 80px auto 0;
+
+    &-form
+    {
+        width: 100%;
+        box-sizing: border-box;
+        background: $formBackground;
+        padding: $formPadding;
+        border-radius: $borderRadius $borderRadius 0 0;
+    }
+
+    &-list
+    {
+        width: 100%;
+        box-sizing: border-box;
+        padding: $formPadding * 1.5 $formPadding $formPadding;
+        border-left: 1px solid $formBackground;
+        border-right: 1px solid $formBackground;
+        border-bottom: 1px solid $formBackground;
+        border-radius: 0 0 $borderRadius $borderRadius;
+        background: #fff;
+
+        &-content
+        {
+            padding-top: $formPadding * 1.5;
+        }
+
+        &-error
+        {
+            color: $lightRed;
+            padding: 35px 0;
+            text-align: center;
+        }
+    }
+
+    .ui-loader-default
+    {
+        margin: 35px auto 25px;
+    }
+}
+
+.bp-comment-row
+{
+    // Space between the email/message and the avatar
+    $avatarMargin: 15px;
+
+    font-size: 14px;
+    position: relative;
+
+    & + &
+    {
+        margin-top: 20px;
+    }
+
+    &-avatar, &-info
+    {
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 1;
+    }
+
+    &-avatar
+    {
+        width: $avatarSize;
+        height: $avatarSize;
+        border-radius: $borderRadius;
+        background: $formBackground;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    &-info
+    {
+        width: 100%;
+        padding-top: 6px;
+        padding-left: #{$avatarSize + $avatarMargin};
+        box-sizing: border-box;
+    }
+
+
+    &-email
+    {
+        font-weight: bold;
+        color: $textColor;
+        line-height: 1;
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        label { color: #000; }
+    }
+
+    &-message
+    {
+        color: $lightTextColor;
+        line-height: 1;
+
+        label
+        {
+            color: #222;
+            font-weight: bold;
+        }
+    }
+
+    &-email + &-message
+    {
+        margin-top: 6px;
+    }
+}
+
+.comments-parent
+{
+    height: 100%;
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: center;
+    align-items: flex-start;
+    box-sizing: border-box;
+}
+
+.comments-empty
+{
+    text-align: center;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

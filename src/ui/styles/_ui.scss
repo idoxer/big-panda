@@ -1,0 +1,16 @@
+@import "../../styles/main";
+
+.ui-control
+{
+    & + &
+    {
+        margin-top: 10px;
+    }
+}
+
+.ui-error
+{
+    color: $lightRed;
+    font-size: 11px;
+    padding: 4px 0 0;
+}

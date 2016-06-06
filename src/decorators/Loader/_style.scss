@@ -1,0 +1,83 @@
+@import "../../styles/main";
+
+.ui-loader-default
+{
+	$size: 28px;
+	$tickness: 88%;
+
+    font-size: 10px;
+    text-indent: -9999em;
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    background: #fff;
+    position: relative;
+    animation: load3 1.15s infinite linear;
+    transform: translateZ(0);
+
+    &:before, &:after
+    {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    &:before
+    {
+        width: 50%;
+        height: 50%;
+        background: $primary;
+        border-radius: 100% 0 0 0;
+    }
+
+    &:after
+    {
+        background: #fff;
+        width: $tickness;
+        height: $tickness;
+        border-radius: 50%;
+        margin: auto;
+        bottom: 0;
+        right: 0;
+    }
+
+    &.invert
+    {
+        background: $primary;
+
+        &:before
+        {
+            background: #fff;
+        }
+
+        &:after
+        {
+            background: $primary;
+        }
+    }
+}
+
+@-webkit-keyframes load3
+{
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes load3
+{
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}

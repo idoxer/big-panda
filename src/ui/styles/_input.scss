@@ -1,0 +1,45 @@
+@import "../../styles/main";
+
+.ui-input
+{
+    position: relative;
+
+    input
+    {
+        width: 100%;
+        max-width: 100%;
+        min-width: 100%;
+        font-family: $fontFamily;
+        font-size: 12px;
+        box-sizing: border-box;
+        border: 1px solid $borderColor;
+        padding: 8px 12px;
+        color: $inputTextColor;
+    }
+
+    &.icon
+    {
+        .ui-icon
+        {
+            position: absolute;
+            top: 10px;
+            left: 12px;
+
+            i:before { color: $placeholderTextColor; }
+        }
+
+        input
+        {
+            padding: 8px 12px 8px 12px + 25px;
+        }
+    }
+
+    &.error
+    {
+        input
+        {
+            color: $lightRed;
+            border-color: $lightRed;
+        }
+    }
+}

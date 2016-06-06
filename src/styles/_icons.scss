@@ -1,0 +1,33 @@
+$class-slug: ui-icon;
+
+$icons:
+(
+    "search": 		    900,
+);
+
+@each $icon in $icons
+{
+    $name: nth($icon, 1);
+    $code: nth($icon, 2);
+
+    .#{$class-slug}-#{$name}:before
+    {
+        content: "\e#{$code}";
+    }
+}
+
+[class^="#{$class-slug}"], [class*=" #{$class-slug}"]
+{
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'big-panda' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

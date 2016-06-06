@@ -1,0 +1,24 @@
+@mixin addFont($family, $name: $family, $type: null, $style: normal, $weight: normal)
+{
+    $folder: "/fonts";
+
+    @if $type != null {
+        $type: -#{$type};
+    }
+
+    @font-face
+    {
+        font-family: $family;
+        font-style: $style;
+        font-weight: $weight;
+        src: url("#{$folder}/#{$name}/#{$name}#{$type}.eot"); // IE9 Compact Modes
+        src: url("#{$folder}/#{$name}/#{$name}#{$type}.eot?#iefix") format("embedded-opentype"), // IE6-IE8
+        //url("#{$folder}/#{$name}/#{$name}#{$type}.woff2") format("woff2"), // Super Modern Browsers
+        url("#{$folder}/#{$name}/#{$name}#{$type}.woff") format("woff"), // Pretty Modern Browsers
+        url("#{$folder}/#{$name}/#{$name}#{$type}.ttf")  format("truetype"), // Safari, Android, iOS
+        url("#{$folder}/#{$name}/#{$name}#{$type}.svg##{$name}#{$type}") format("svg"); // Legacy iOS
+    }
+}
+
+// Big Panda
+@include addFont("big-panda");

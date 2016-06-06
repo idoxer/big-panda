@@ -1,0 +1,73 @@
+@import "../../styles/main";
+
+.ui-button
+{
+
+    button
+    {
+        border: none;
+        border-radius: $borderRadius;
+        background: $primary;
+        color: #fff;
+        padding: 9px 15px;
+        font-size: 11px;
+        font-weight: bold;
+        cursor: pointer;
+        position: relative;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+        &:not(:disabled):hover
+        {
+            background: darken($primary, 10%);
+        }
+
+        &, &:not(:disabled):hover { transition: background 0.15s }
+
+        &:disabled
+        {
+            cursor: default;
+        }
+    }
+
+    &.right
+    {
+        min-height: 30px;
+
+        button
+        {
+            float: right;
+        }
+    }
+
+    .ui-loader-default
+    {
+        margin: 0 auto;
+        position: absolute;
+        top: 6px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background: $primary;
+    }
+
+    &.loader
+    {
+        button:before
+        {
+            border-radius: $borderRadius;
+            content: "";
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: $primary;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+}

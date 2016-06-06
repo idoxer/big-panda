@@ -1,0 +1,30 @@
+@import "normalize";
+@import "fonts";
+@import "icons";
+@import "main";
+
+html, body
+{
+	width: 100%;
+
+	padding: 0;height: 100%;
+	margin: 0;
+	background: $background;
+    font-family: $fontFamily;
+    font-size: $fontSize;
+    color: $textColor;
+}
+
+#app, .app-content
+{
+    width: 100%;
+    height: 100%;
+}
+
+*:focus { outline: none }
+
+// Placeholder text color
+::-webkit-input-placeholder { color: $placeholderTextColor }
+::-moz-input-placeholder { color: $placeholderTextColor }
+:-moz-input-placeholder { color: $placeholderTextColor }
+:-ms-input-placeholder { color: $placeholderTextColor }
